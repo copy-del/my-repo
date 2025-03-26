@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조합선택자</title>
+<style>
+    /* 조합 선택자 : 두 개 이상의 선택자를 조합해서 사용하는 방법 */
+    /* 그룹 선택자, 계층 선택자, 반응 선택자 */
+    /* (1) 그룹 선택자 : 쉼표(,)로 구분해서 여러 개의 선택자를 묶어서 사용 */
+    /* - 여러 개의 선택자에 동일한 스타일을 적용할 때 사용 */
+    /* - 선택자1, 선택자2, 선택자3 { 스타일 속성: 값; } */
+    /* (2) 계층 선택자 */
+    /* (2-1) 자손 선택자
+        기호 : 공백 */
+    body p{
+        color: red;
+    }
+    /* (2-2) 자식 선택자
+        기호 : >    */
+        ul > li{
+            color: blue;
+        }
+    /* (2-3) 인접 형제 선택자(근접 후행 선택자)
+        기호 : +    */
+    .one + li{
+            background-color: pink;
+        }
+    
+    p + *{
+        background-color: yellow;
+    }
+
+    /* (2-4) 일반 형제 선택자(후행 선택자)
+        기호 : ~    */
+    p ~ p{
+        font-family : '궁서';
+    }
+
+    .one ~ *{
+        font-family: '휴먼매직체';
+    }
+
+    /* (3) 반응 선택자
+        - 선택자:hover => 마우스를 올렸을 때 
+        - 선택자:active => 마우스를 클릭했을 때 */
+    h1:hover{
+        color : aqua;
+    }
+    h1:active{
+        color : blue;
+    }
+
+    /* CSS 명시도
+        전체 선택자 * : 0
+        태그 선택자 (태그명) : 1
+        클래스 선택자 (.클래스명) : 10
+        아이디 선택자 (#아이디명) : 100
+        > 조합 선택자의 경우, 사용한 선택자들을 일일히 덧셈 계산해서 명시도를 계산 */
+        /* 명시도를 계산하기 힘든 경우 치트키*/
+        #only{
+            color: purple;
+        }
+        /* !important : 해당 스타일 속성을 강제로 적용하는 속성 */
+        /* 명시도를 대략 10000정도로 높여줌 */
+        h1{
+            color: orange !important;
+        }
+</style>
+</head>
+<body>
+    <h1 id="only">선택자 실습</h1>
+    <p>1번</p>
+    <ul>
+        <li class="one">2번</li>
+        <li>3번</li>
+        <li>4번</li>
+        <p>??</p>
+    </ul>
+    <p>5번</p>
+    <p>6번</p>
+</body>
+</html>

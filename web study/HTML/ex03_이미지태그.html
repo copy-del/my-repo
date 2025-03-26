@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 태그</title>
+</head>
+
+<body>
+    <!-- 이미지 태그
+     웹 페이지에 이미지를 띄울 수 있는 태그
+     - 끝태그 사용X
+     - 필요한 이미지 경로, 크기 등 설정은 속성값으로 지정 -->
+
+    <!-- src : 이미지의 경로(절대/상대)
+            alt : 이미지가 잘못되었을 경우 대체설명 -->
+
+    <!-- 절대경로와 상대경로
+             절대경로 : 외부 이미지나 문서에 연결할 때 -->
+    <img src="https://unity.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Ffuvbjjlp%2Fproduction%2F392a67d86e4df93fcfab56af6ba10ed87e42d0a7-1536x864.jpg&w=3840&q=75"
+        alt="타르코프" width="100px">
+        <!-- 상대경로 : 특정 위치를 기준으로 파일을 찾는 경로 >> 내부 자료(이미지)를 연결할 때 사용 -->
+         <!-- 내부 이미지에 접근하는 법 : 내 현재 파일 기준으로 경로를 찾아가는 방법법 -->
+          <!-- ./ : 내 현재 위치
+                ../ : 내 현재 위치보다 한 단계 상위
+                ../../../ >> 여러번 나가야 할 때 : ../추가가 -->
+         <img src="../imgs/타길라.webp" alt="" width="100px"
+         >
+</body>
+
+</html>

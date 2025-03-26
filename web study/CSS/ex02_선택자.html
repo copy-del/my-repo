@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*선택자의 종류
+        (1) 전체 선택자 : *
+        - HTML 문서의 모든 요소를 선택
+        */
+
+        *{
+            color: coral;
+        }
+
+        /* (2) 태그 선택자 : 태그명 */
+        li{
+            color: skyblue;
+        }
+
+        /* 스타일을 구분해서 지정해주고 싶을 때
+            >> 클래스, 아이디 선택자 사용
+        (3)클래스 선택자 : .클래스명   중복가능! 재사용성 뛰어남*/
+        .one{
+            color: lightgreen;
+        }
+        /*(4)아이디 선택자 : #아이디명   중복불가능! (로고, 상단바, 검색창 같은 고유한 디자인)*/
+        #two{
+            color: lightcoral;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1 class="one">내가 좋아하는 것</h1>
+
+    <ul>
+        <li id="two">게임</li>
+        <li>라면</li>
+    </ul>
+
+    <p class="one">1일 1라면 주말 게임~</p>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 태그</title>
+</head>
+<body>
+    <!-- form : 웹 페이지에 입력받을 수 있는 공간을 만들때 사용하는 태그
+            action : form 안에서 입력한 데이터의 전달 위치 지정 > get(기본값)
+            method : 입력 데이터의 전달 방식 지정 (get/post)
+            <input type =""> : 사용자에게 데이터를 입력받을 수 있는 태그
+                        > type속성에 따라서 다양한 것을 입력받을 수 있음. 
+                        >> password(비밀번호), submit(제출), reset(초기화)
+            input 추가 속성 : name(input 태그끼리의 구분값 JAVA변수지정(?))
+                             maxlength(글자수제한) 
+                             placeholder(미리보기 텍스트)
+            checkbox 속성 : 여러 가지 옵션을 선택할 수 있음
+            radio 속성 : 여러 가지 옵션 중 하나만 선택할 수 있음.
+            > 각각의 선택지는 동일한 질문끼리 같은 name 속성값으로 묶고,
+            각 선택지를 구분하기 위해 value값을 부여
+            select 태그 : 목록 상자를 만드는 역할 > option 태그로 목록의 내용을 채움
+            -->
+            
+>
+            <form action="#" method="get">
+                <span>ID</span>
+                <input type="text" name="ID" maxlength="5" placeholder="아이디입력"><br>
+                <span>PW</span>
+                <input type="text" name="PW">
+
+                <input type="color" name="" id="">
+                <input type="file" name="" id="">
+                <input type="date" name="" id="">
+                <br>
+                <span>밥</span><input type="checkbox" name="eat" value="rice" id="">
+                <span>빵</span><input type="checkbox" name="eat" value="bread" id="">
+                <span>면</span><input type="checkbox" name="eat" value="noodle" id="">
+                <span>남자</span>
+                <input type="radio" name="gender" value="man" id="">
+                <span>여자</span>
+                <input type="radio" name="gender" value="woman" id="">
+                <span>안경씀</span>
+                <input type="radio" name="glasses" value="on" id="">
+                <span>안경안씀</span>
+                <input type="radio" name="glasses" value="off" id="">
+
+                <select name="home" id="">
+                    <option value="">거주지</option>
+                    <option value="seoul">서울</option>
+                    <option value="incheon">인천</option>
+                    <option value="gyeonggi">경기</option>
+                    <option value="gwangju">광주</option>
+                </select>
+
+                <input type="submit">
+                <input type="reset">
+            </form>
+
+            
+</body>
+</html>
