@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padding</title>
+    <style>
+        /* padding : 요소의 내부 여백을 지정하는 속성 */
+        /* 사용법은 margin과 동일 */
+        /* 바깥쪽 > margin > border > padding > content */
+
+        .test{
+            width: 100px;
+            height: 100px;
+            background-color: darkseagreen;
+            border: 2px solid black;
+            padding: 30px;
+            /* 테두리와 내용 사이에 여백을 주기 때문에 요소의 크기가 커진것처럼 보임 */
+        }
+
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #f1bbba;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            padding-left: 100px;
+            background-color: #f8ecc9;
+        }
+        #box3{
+            width: 100px;
+            height: 100px;
+            padding-left: 200px;
+            background-color: #a79c8e;
+        }
+        #box4{
+            width: 100px;
+            height: 100px;
+            padding-left: 300px;
+            background-color: #eb9f9f;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+</body>
+</html>
