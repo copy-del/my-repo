@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex실습</title>
+    <style>
+        .container {
+            background-color: #520044;
+            height: 100px;
+            display: flex
+        }
+
+        .container>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* container 안의 하나의 div에 대해서 
+            자식 요소를 배치할 수 있는 container 역할을 함 */
+        }
+
+        .item1,
+        .item3 {
+            flex-basis: 15%;
+        }
+
+        .item2 {
+            flex-basis: 70%;
+        }
+
+        a {
+            text-decoration: none;
+            /* 밑줄 제거 */
+            color: white;
+            /* 글자 색상 */
+            font-size: 20px;
+            /* 글자 크기 */
+            margin: 0 10px;
+            /* 좌우 여백 */
+            
+        }
+
+        #upscroll {
+            position: fixed;
+            /* 고정 위치 */
+            top: 70px;
+            /* 아래에서 20px */
+            right: 20px;
+            /* 오른쪽에서 20px */
+            font-size: 60px;
+            /* 글자 크기 */
+            color: #520044;
+            /* 글자 색상 */
+            cursor: pointer;
+            /* 마우스 커서 모양 변경 */
+        }
+        a:hover{
+            color: antiquewhite;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">
+            <img src="../imgs/타길라.webp" alt="logo" width="200px" height="100px">
+        </div>
+        <div class="item2">
+            <a href="#">게시판</a>
+            <a href="#">소식</a>
+            <a href="#">문의</a>
+        </div>
+        <div class="item3">
+            <a href="#">로그인</a>
+            <a href="#">회원가입</a>
+        </div>
+    </div>
+
+    <div>
+        <h2 id="upscroll">⇑</h2>
+    </div>
+</body>
+
+</html>

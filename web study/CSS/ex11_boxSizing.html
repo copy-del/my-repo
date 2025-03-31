@@ -7,7 +7,7 @@
     <style>
         div{
             width: 400px;
-            border: 5px solid black;
+            border: 4px solid black;
             padding: 20px;
 
             /* box-sizing : 요소의 크기를 화면에 표시하는 방식 */
@@ -17,6 +17,10 @@
                     가로 100 > padding+border+content ! margin은 포함되지 않음
                     padding, border 값이 들어가도, 요소의 크기가 커지는 게 아니라 content가 작아짐 */
 
+        }/* 원하는 값으로 박스 사이징을 하기 위해서 border-box를 사용 */
+        .contetnB{
+            box-sizing: content-box;
+            background-color: lightblue;
         }
         .borderB{
             box-sizing: border-box;
@@ -26,6 +30,6 @@
 </head>
 <body>
     <div class="borderB">border-box</div>
-    <div class="contetnB">contetn-box</div>
+    <div class="contetnB">content-box</div>
 </body>
 </html>

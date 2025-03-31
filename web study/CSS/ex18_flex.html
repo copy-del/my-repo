@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        .container {
+            height: 500px;
+            background-color: rgb(77, 121, 159);
+            /* flex : 레이아웃 배치 기능
+                    내가 움직이고 싶은, 배치하고 싶은 요소 : item
+                    item의 부모요소 : container*/
+            /* (1) flex 설정 
+            */
+            display: flex;
+            /* (2) flex-direction : 배치 방향 설정
+                (2-1) row (기본값)
+                    - 메인 축 : 가로
+                    - 서브 축 : 세로*/
+            /* flex-direction: row; */
+                /*(2-2) column
+                    - 메인 축 : 세로
+                    - 서브 축 : 가로 */
+            flex-direction: row;
+
+            /* (3) 메인축 정렬 : justify-content
+                (3-1) flex-start : 시작점에 정렬
+                (3-2) flex-end : 끝점에 정렬
+                (3-3) center : 중앙에 정렬
+                (3-4) space-between : 양 끝에 정렬, 사이에 동일한 여백을 줌
+                (3-5) space-around : 양 끝에 정렬, 사이에 동일한 여백을 주고, 양 끝에도 여백을 줌 */
+            justify-content: center;
+
+            /* (4) 서브축 정렬 : align-items
+                (4-1) flex-start : 시작점에 정렬
+                (4-2) flex-end : 끝점에 정렬 (기본값)
+                (4-3) center : 중앙에 정렬
+                (4-4) baseline : 기준선에 정렬
+                (4-5) stretch : 늘림 */
+            align-items: center;
+            /* (5) flex-wrap : 줄바꿈 설정
+                (5-1) nowrap : 줄바꿈 안함 (기본값)
+                (5-2) wrap : 줄바꿈 함
+                (5-3) wrap-reverse : 줄바꿈 함, 역순으로 배치 */
+            /* flex-wrap: wrap; */
+        }
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: #eb9f9f;
+            border: 1px solid black;
+
+            /* item에 작성해야 하는 속성 */
+            /* flex-basis: 아이템의 기본 크기 설정 */
+            flex-basis: 15%;
+        }
+        .center{
+            flex-basis: 70%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">wer</div>
+        <div class="item center">wer</div>
+        <div class="item">wer</div>
+    </div>
+</body>
+</html>
