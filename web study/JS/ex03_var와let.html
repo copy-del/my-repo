@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var : 재선언 가능, 재할당 가능
+        // let : 재선언 불가능, 재할당 가능
+        // const : 재선언 불가능, 재할당 불가능(상수)
+        
+        var a = 1;
+        console.log(a); // 1
+        var a = 2; // var는 중복 선언 가능
+        console.log(a); // 2
+
+        let b = 1;
+        console.log(b); // 1
+        // let b = 2; // SyntaxError: Identifier 'b' has already been declared
+        b = 2; // let은 중복 선언 불가능하지만 재할당 가능
+    </script>
+</body>
+</html>

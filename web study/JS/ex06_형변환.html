@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let age = prompt("나이")
+
+        // 문자열 > 숫자 변환
+        console.log(`변환 전${age}`);
+        console.log('변환 후' + parseInt(age)); // 문자열을 숫자로 변환하여 더하기
+        // parseInt(), parseFloat() 사용 가능
+        // parseInt() : 정수로 변환
+        // parseFloat() : 실수로 변환
+        // > 자료형은 전부 다 number로 변환된다.
+        let num =3.14;
+        console.log(`변환 전${num}`);
+        console.log(`변환 후 ${parseInt(num)}`);
+
+        // 숫자가 될 수 없는 문자열을 숫자로 변환하면 NaN이 된다.
+        // NaN : Not a Number
+
+        // 숫자 > 문자
+        // toString() 사용
+        let num2 = 1234;
+        let str1 = num2.toString(); // 숫자를 문자로 변환
+    </script>
+</body>
+</html>

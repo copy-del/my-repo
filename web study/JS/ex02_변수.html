@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 변수 : 데이터를 담을 수 있는 공간
+        // 자바에서의 변수 : 자료형 + 변수명 = 값;
+        // 자바스크립트에서의 변수 : var(구식), let(최신), const(상수) = 값;
+        
+        // 자료형
+        // - string, number, boolean, null, undefined, object, array
+        
+        let str = "hoseong";
+        let str2 = '3';
+        let num = 10;
+        let num2 = 3.14;
+        let bool = true;
+
+        // 1. string : 문자형
+        // "" 또는 ''또는 ````로 감싸면 문자열로 인식한다.
+        // "" : 큰따옴표, '' : 작은따옴표, `` : 백틱(ES6에서 추가된 문자열)
+        let str1 = 'hoseong';
+        console.log('str1은',str1)
+        console.log('str2는',str2)
+        
+        // 2. number : 숫자형
+        let num3 = 10; // 정수형
+        let num4 = 3.14; // 실수형
+
+        console.log('num3은',num3)
+        console.log('num4는',num4)  
+
+        // 자료형을 확인하는 방법
+        // 1. console창의 색깔
+        // 2. typeof() : 자료형을 확인하는 방법
+        console.log(typeof num4); // string
+
+        // 3. boolean : true 또는 false
+        let check = true;
+
+        // 4. null : 비어있는 값, 존재하지 않는 값
+        // 5. undefined : 정의되지 않은 값, 변수가 선언되었지만 값이 할당되지 않은 상태
+        // 공통점. null과 undefined는 모두 값이 비어있다.
+        // 차이점. null은 의도적으로 비어있는 값을 할당한 것이고, undefined는 변수가 선언되었지만 값이 할당되지 않은 상태이다.
+        let empty = null; // 비어있는 값
+        let empty2; // undefined
+    </script>
+</body>
+</html>
