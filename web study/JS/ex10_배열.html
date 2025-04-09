@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열 : 여러 개의 데이터를 하나의 변수에 담을 수 있는 자료구조
+        // - 길이가 정해져 있지 않다.
+        // - 자료형의 제한이 없다.( 자료형 통일 필요 없음)
+        // - 배열의 인덱스는 0부터 시작한다.
+        
+        // 배열 생성 방법
+        // 1. let 변수명 = []; // 빈 배열 생성
+        // 2. let 변수명 = new Array(); // 빈 배열 생성
+        // 3. let 변수명 = [값1, 값2, 값3]; // 값이 있는 배열 생성
+        // 4. let 변수명 = new Array(값1, 값2, 값3); // 값이 있는 배열 생성
+        
+        let arr = [];
+        // 배열에 데이터를 추가하는 방법
+        arr[0] = 1;
+        arr[1] = '김호성';
+        arr[2] = true;
+        arr[3] = [1, 2, 3];
+        arr[4] = {name: '김호성', age: 20};
+        arr[5] = function() {console.log('hello')};
+        arr[6] = null;
+        arr[7] = undefined;
+        arr[8] = Symbol('symbol');
+        arr[9] = BigInt(12345678901234567890n);
+        arr[10] = 3.14;
+
+        console.log(arr); // 배열 출력
+
+        // push() : 배열의 맨 뒤에 데이터를 추가하는 메서드
+        arr.push(3);
+        arr.push(4,5,6); // 여러 개의 데이터를 추가할 수 있다.
+        console.log(arr); // 배열 출력
+
+        // 배열 데이터에 접근 - 인덱스를 사용하여 접근한다.
+        console.log(arr[5]);
+
+        // 배열 데이터 삭제 : splice() 메서드를 사용하여 삭제한다.
+        // splice(시작인덱스, 삭제할개수) : 시작인덱스부터 삭제할개수만큼 삭제한다.
+        arr.splice(0,2); // 0번 인덱스부터 2개 삭제한다.
+        console.log(arr); // 삭제된 배열 출력
+
+        // 배열 내에 특정 데이터가 있는지 확인 하는 방법 : includes() 메서드를 사용한다.
+        // includes(데이터) : 배열 내에 데이터가 있으면 true, 없으면 false를 반환한다.
+        console.log('3이 포함되어 있나요?', arr.includes(3)); // true
+        console.log('10이 포함되어 있나요?', arr.includes(10)); // false
+
+        // 배열 내 의 특정 데이터의 인덱스를 찾는 방법 : indexOf() 메서드를 사용한다.
+        // indexOf(데이터) : 배열 내에 데이터가 있으면 인덱스번호를 반환하고 없으면 -1을 반환한다.
+        console.log('3의 인덱스는?', arr.indexOf(3)); // 0
+        console.log('10의 인덱스는?', arr.indexOf(10)); // -1
+        
+        // 특정 범위의 데이터들을 복사 하는 방법 : slice() 메서드를 사용한다.
+        // slice(시작인덱스, 끝인덱스) : 시작인덱스부터 끝인덱스까지 복사한다.
+        // 끝인덱스는 포함되지 않는다.
+        // 잘라낸 데이터들을 새로운 배열로 리턴 ( 원본 배열은 변하지 않음 )
+        let arr2 = arr.slice(0,4); // 0번 인덱스부터 4번 인덱스까지 복사한다.
+        console.log(arr2); // 복사된 배열 출력
+
+        // 배열의 길이. 배열명.length : 배열의 길이를 반환한다.
+        
+
+
+    </script>
+</body>
+</html>

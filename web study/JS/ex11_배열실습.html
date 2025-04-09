@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 1. 과목 수 입력 받음
+        let num = Number(prompt("과목 수를 입력하세요"));
+        // 2. 점수 입력할 과목명 입력 받음
+        let sub = [];
+        for(let i=0; i<num; i++){
+            sub[i] = prompt('과목명을 입력하세요');
+        }
+        // 3. 점수 입력 받음
+        let score = []; // 과목 점수 배열 생성
+        for(let i=0; i<num; i++){
+            score.push(prompt(sub[i] + '의 점수를 입력하세요'));
+        }
+        console.log(`과목은 ${sub}`); // 과목명 출력
+        console.log(`과목의 점수는${score}`); // 점수 출력
+
+        // 4. 총합 점수 계산
+        let resultHTML = '';
+        resultHTML += '<table border="1" width="300" height="200"><tr>';
+        for(let i=0; i<sub.length; i++){
+            resultHTML += '<td>';
+            resultHTML += sub[i]; // 과목명 출력
+            resultHTML += '</td>'; 
+        }
+        resultHTML += '<td>총합</td>';
+        resultHTML += '<td>평균</td>';
+        resultHTML += "</tr><tr>";
+        for(let i=0; i<score.length; i++){
+            resultHTML += `<td>`;
+            resultHTML += score[i]; // 점수 출력
+            resultHTML += `</td>`;
+        }
+        resultHTML += "<td>";
+        let sum = 0; // 총합 점수 초기화
+        for(let i=0; i<score.length; i++){
+            sum += Number(score[i]); // 점수 합계 계산
+        }
+        resultHTML += sum;
+        resultHTML += "</td>";
+        resultHTML += "<td>";
+        let avg = sum / score.length; // 평균 점수 계산
+        resultHTML += avg;
+        resultHTML += "</td>";
+        resultHTML += "</tr></table>";
+        document.write(resultHTML); // HTML에 출력
+        // 5. 평균 점수 계산
+         
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // [예제] 사용자에게 이모지와 숫자를 입력받아서 피라미드 모양을 출력하는 pyramid()
+
+        // 1. 사용자에게 이모지와 숫자(몇줄) 입력받기
+        // 2. 두개의 입력값을 pyramid() 함수에 매개변수로 전달
+        // 3. pyramid > 매개변수를 이용해서 웹페이지에 피라미드 모양 출력하기
+
+        let emoji = prompt("이모지 입력"); // 이모지 입력받기
+        let num = Number(prompt("몇줄?")); // 몇줄 입력받기
+        for(let i = 0; i < num; i++){
+            let str = ""; // 빈 문자열 초기화
+            for(let j = 0; j < num - i; j++){ // 공백 출력
+                str += " "; // 공백 추가
+            }
+            for(let k = 0; k < i + 1; k++){ // 이모지 출력
+                str += emoji; // 이모지 추가
+            }
+           document.write(str + "<br>"); // 웹페이지에 출력
+        }
+
+
+    </script>
+</body>
+</html>
