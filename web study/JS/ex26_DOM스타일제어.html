@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            background-color: yellow;
+            border-radius: 50%;
+        }
+        .two{
+            background-color: green;
+            border-radius: 0%;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="style1">원으로 만들기</button>
+    <button id="style2">직사각형으로 만들기</button>
+
+    <script>
+        let box = document.getElementById("box"); // div태그 가져오기
+        let style1 = document.getElementById("style1"); // 원으로 만들기 버튼 가져오기
+        let style2 = document.getElementById("style2"); // 직사각형으로 만들기 버튼 가져오기
+        
+        style1.addEventListener("click", function(){
+            box.className = 'one';
+        })
+        style2.addEventListener("click", function(){
+            box.className = 'two';
+        })
+    </script>
+</body>
+</html>

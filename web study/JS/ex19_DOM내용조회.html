@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="msg">여러분 대답좀...</p>
+
+    <div id="area">
+        <h1>시끄</h1>
+        <h2>러워요</h2>
+    </div>
+
+    <script>
+        // area라는 아이디를 가진 요소를 area라는 변수에 저장
+        // area 출력
+        let area = document.getElementById("area");
+        console.log(area); // <div id="area">
+        // area의 전체 content에 출력
+        console.log(area.innerHTML); // <h1>시끄</h1><h2>러워요</h2>
+        // areamdml content 출력
+        console.log(area.textContent); // 시끄러워요
+
+        // area의 content를 변경
+        // -> innerHTML : HTML 태그를 포함한 내용으로 변경
+        // -> textContent : HTML 태그를 포함하지 않은 내용으로 변경
+        // 1. 내용에 태그 포함
+        area.innerHtml = "<h1>새로운내용</h1>";
+        // 2. 내용에 태그 미포함
+        
+
+
+        // msg라는 id값을 가진 요소를 가져와서 msg라는 변수에 저장
+        let msg = document.getElementById("msg");
+        console.log("p태그", msg);
+
+        // msg의 전체 content에 접근
+        console.log(msg.innerHTML); //
+
+        // msg의 content를 변경
+        msg.innerHTML = "내용 변경완료";
+        msg.innerHTML = "내용 추가완료";
+        
+        
+    </script>
+</body>
+</html>

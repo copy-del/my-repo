@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049; /* Darker green */
+        }
+        #area {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        ul {
+            font-family: Arial, Helvetica, sans-serif;
+            list-style-type: none; /* Remove default bullets */
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>내용 변경전</h1>
+    
+    <button>h1 내용 변경</button>
+    <button>area에 a태그 추가</button>
+    <button>area에 ul태그 추가</button>
+    
+    <div id="area">
+
+    </div>
+
+    <script>
+    // 1번 버튼 누르면, h1태그의 내용이 "즐거운 자바스크립트~"로 변경되게 하기
+    // 2번 버튼 누르면, area 안에 유튜브로 이동할 수 있는 a태그 추가하기
+    // 3번 버튼 누르면, ul으로 -html, -css, -js로 구성된 리스트 추가하기    
+
+    let h1 = document.getElementsByTagName("h1")[0]; // h1태그를 선택해서 h1변수에 저장
+    let btn1 = document.getElementsByTagName("button")[0]; // 1번 버튼을 선택해서 btn1변수에 저장
+    let btn2 = document.getElementsByTagName("button")[1]; // 2번 버튼을 선택해서 btn2변수에 저장
+    let btn3 = document.getElementsByTagName("button")[2]; // 3번 버튼을 선택해서 btn3변수에 저장
+    let area = document.getElementById("area"); // area라는 id를 가진 요소를 선택해서 area변수에 저장
+    btn1.addEventListener("click", function(){ // 1번 버튼 클릭시
+        h1.innerHTML = "즐거운 자바스크립트~"; // h1태그의 내용을 변경
+    });
+    btn2.addEventListener("click", function(){ // 2번 버튼 클릭시
+        area.innerHTML += "<a href='https://www.youtube.com/' target='_blank'>youtube</a>"; // area에 a태그 추가
+    });
+    btn3.addEventListener("click", function(){ // 3번 버튼 클릭시
+        area.innerHTML += "<ul><li>html</li><li>css</li><li>js</li></ul>"; // area에 ul태그 추가
+    });
+    </script>
+</body>
+</html>

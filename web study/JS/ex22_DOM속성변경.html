@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="ipt">
+    <button id="btn">입력</button>
+    <div id="area"></div>
+
+
+    <script>
+        // 사용자가 input에 내용을 적고 버튼을 누르면
+        // area에 사용자의 입력값을 추가
+        // 1. 필요한 요소들을 JS영역에 가져오기
+        let ipt = document.getElementById("ipt"); // input 태그 가져오기
+        let btn = document.getElementById("btn"); // 버튼 가져오기
+        let area = document.getElementById("area"); // div 태그 가져오기
+        // 2. 버튼 클릭 이벤트 정의
+        // 2-1. 클릭 이벤트
+        // 2-2. 이벤트가 발생한 당시의 input 태그 값을 가져오기
+        // 2-3. input 태그의 value 속성에 정의된 값을 가져오기
+        // 2-4. area 태그에 p 태그를 추가하고, 그 안에 input 태그의 value 속성에 정의된 값을 넣기
+        // 2-5. input 태그의 value 속성에 정의된 값을 초기화하기
+        btn.addEventListener("click", function () {
+            // .value : input 태그의 value 속성에 정의된 값
+            let data = ipt.value; // input 태그의 value 속성에 정의된 값 가져오기
+            area.innerHTML += "<p>" + data + "</p>"; // area 태그에 p 태그 추가
+            ipt.value = ""; // input 태그 초기화
+        })
+
+
+        // 이벤트가 발생하면 이벤트함수에 매개변수로 이벤트객체가 들어옴. (이벤트에 대한 모든 정보)
+        // keydown 등의 키보드 이벤트가 발생하면 이벤트객체.key 등을 이용해서
+        // 특정 키보드 값이 눌렸을 때만 이벤트 처리를 해줄 수 있다.
+        ipt.addEventListener("keydown", function (e) {
+            if (e.key == "Enter") {
+                let data = ipt.value; // 입력된 값 가져오기
+                area.innerHTML += "<p>" + data + "</p>";
+                ipt.value = ""; // 입력창 초기화
+            }
+        })
+    </script>
+</body>
+
+</html>

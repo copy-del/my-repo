@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">적용</button>
+    <input type="text" id="ipt">
+    <img src="https://www.chungjungone.com/wp-content/uploads/contents/prdtInfoMng/prdtInfoMng_202109020456047431.jpg" id="img">
+
+<script>
+    // input태그에 값을 적고 엔터를 누르면
+    // 입력값이 강아지... img를 강아지에 해당하는 src값으로 변경
+    // 입력값이 고양이... img를 고양이에 해당하는 src값으로 변경
+    // ** 이미지를 추가하는게 아님!! 
+    let img = document.getElementById("img");
+    let ipt = document.getElementById("ipt");
+    let btn = document.getElementById("btn");
+    btn.addEventListener('click', function(){
+        if (ipt.value == "강아지"){
+            img.src = "../imgs/강아지.jpg"; 
+        }
+        else if (ipt.value == "고양이"){
+            img.src = "../imgs/고양이.jpg"; 
+        }
+        else{
+            alert("강아지 or 고양이만 입력하세요")
+        }
+    })
+
+    
+    // img태그의 src속성에 접근
+    console.log(img.src);
+    // src 값을 변경
+    // img.src = "../imgs/강아지.jpg"; // src 속성에 강아지 이미지 경로를 대입
+    // img.src = "../imgs/고양이.jpg"; // src 속성에 고양이 이미지 경로를 대입
+    
+</script>
+
+</body>
+</html>

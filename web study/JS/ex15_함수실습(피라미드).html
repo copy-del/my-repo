@@ -15,16 +15,25 @@
 
         let emoji = prompt("이모지 입력"); // 이모지 입력받기
         let num = Number(prompt("몇줄?")); // 몇줄 입력받기
-        for(let i = 0; i < num; i++){
-            let str = ""; // 빈 문자열 초기화
-            for(let j = 0; j < num - i; j++){ // 공백 출력
-                str += " "; // 공백 추가
+        let pyramid = function(emoji, num){ // 피라미드 함수 정의
+            for(let i = 0; i < num; i++){ // 줄 수만큼 반복
+                let str = ""; // 빈 문자열 초기화
+                for(let k = 0; k < i + 1; k++){ // 이모지 출력
+                    str += emoji; // 이모지 추가
+                }
+               document.write(str + "<br>"); // 웹페이지에 출력
             }
-            for(let k = 0; k < i + 1; k++){ // 이모지 출력
-                str += emoji; // 이모지 추가
-            }
-           document.write(str + "<br>"); // 웹페이지에 출력
         }
+        // for(let i = 0; i < num; i++){
+        //     let str = ""; // 빈 문자열 초기화
+        //     for(let j = 0; j < num - i; j++){ // 공백 출력
+        //         str += " "; // 공백 추가
+        //     }
+        //     for(let k = 0; k < i + 1; k++){ // 이모지 출력
+        //         str += emoji; // 이모지 추가
+        //     }
+        //    document.write(str + "<br>"); // 웹페이지에 출력
+        // }
 
 
     </script>

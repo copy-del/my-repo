@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="txt">내용변경 전</p>
+    <button id="btn">클릭</button>
+
+    <script>
+        // 버튼에 이벤트를 적용하는 방법
+        // 이벤트 : 사용자가 브라우저에 동작하는 행위 > 클릭, 마우스 이동, 키보드 입력 등
+        // addEventListener(이벤트명, 이벤트핸들러(콜백함수)); : 이벤트를 등록하는 메서드
+        // 이벤트 핸들러 : 이벤트가 발생했을 때 실행되는 함수. 콜백함수로 작성.
+        // 콜백함수 : 이벤트가 발생했을 때 실행되는 함수.
+
+        // btn이라는 id를 가진 요소를 가져와서 객체화해서 JS영역에 btn이라는 변수에 저장
+        let btn = document.getElementById("btn"); 
+
+        // btn에 이벤트를 정의
+        btn.addEventListener("click", function(){
+            // btn에 클릭 이벤트가 발생했을 때, alert실행.
+            alert("클릭 이벤트 발생")
+        });
+
+        // p태그를 클릭하면 console창에 "p태그 클릭"이라고 출력하는 이벤트 등록
+        let pp = document.getElementsByTagName("p");
+        pp[0].addEventListener("click", function(){
+            console.log("p태그 클릭");
+        });
+
+        const dbEvent = function(){
+            console.log("더블클릭 이벤트 발생");
+        }
+
+        // body 영역을 더블클릭하면 console창에 '더블클릭 이벤트 발생' 출력하는 이벤트 등록
+        // 외부에 정의된 함수를 콜백함수로 활용할 때에는 함수 호출부분에 소괄호를 적지 않는다.
+        // 소괄호를 만나면 즉시 실행을 해버림.
+        let body = document.getElementsByTagName("body");
+        body[0].addEventListener("dblclick", dbEvent );
+
+        
+
+
+    </script>
+</body>
+</html>

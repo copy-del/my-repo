@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        
+    </div>
+    <button id="circle">원으로 만들기</button>
+    <button id="square">직사각형으로 만들기</button>
+
+    <script>
+        // 요소의 스타일을 변경하는 방법
+        // 요소.style.스타일속성 = 값. 
+        let box = document.getElementById("box"); // div태그 가져오기
+        let circle = document.getElementById("circle"); // 원으로 만들기 버튼 가져오기
+        let square = document.getElementById("square"); // 직사각형으로 만들기 버튼 가져오기
+        box.style.backgroundColor = "red"; // div태그의 배경색을 빨간색으로 변경
+        // >> inline 스타일로 변경됨.
+        // 원으로 만들기 > 노란 원
+        circle.addEventListener("click", function(){
+            box.style.borderRadius = "50%"; 
+            box.style.backgroundColor = "yellow"; 
+            box.style.width = '100px';
+            box.style.height = '100px';
+        })
+        // 직사각형으로 만들기 > 초록 직사각형 (200,100)
+        square.addEventListener("click",function(){
+            box.style.width = "200px";
+            box.style.height = "100px";
+            box.style.backgroundColor = "green";
+            box.style.borderRadius = "0%"; 
+        })
+    </script>
+</body>
+</html>

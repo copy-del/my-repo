@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">문서객체모델(DOM)</h1>
+    <p>다들 점심은 정하셨는지..</p>
+    <span class="sp">저는</span>
+    <span class="sp">아직</span>
+    <span class="sp">고민중이에요...</span>
+
+    <script>
+        // document   : 현재 HTML 문서에
+        // .          : 접근해서
+        // getElement : 요소를 가져오겠다
+        // ById       : "title"이라는 id 값을 가진.
+        let title = document.getElementById("title"); // 리턴된 값을 담아줌.
+        console.log(title); // <h1 id="title">문서객체모델(DOM)</h1> - 객체로 리턴됨.
+
+        // p 라는 태그명을 가진 요소들을 전부 조회해서,
+        // HtMLCollection 객체로 리턴.
+        let pp = document.getElementsByTagName("p");
+        console.log(pp);
+        // pp : 배열. 배열중 하나의 요소를 선택할 때는 [0]을 붙여서 선택. 인덱  스 번호 적어서 접근.
+        
+        // sp라는 클래스명을 가진 요소를 전부 조회해서 유사 배열형태로 리턴된 객체를 저장
+        let sp = document.getElementsByClassName("sp");
+        console.log(sp[0]);
+        console.log(sp[1]);
+        console.log(sp[2]);
+
+        let sp1 = document
+
+        // DOM
+
+        // getElementById() : id 속성으로 요소를 선택
+        // getElementsByName() : name 속성으로 요소를 선택
+        // getElementsByTagName() : 태그 이름으로 요소를 선택
+        // getElementsByClassName() : class 속성으로 요소를 선택
+    </script>
+</body>
+</html>

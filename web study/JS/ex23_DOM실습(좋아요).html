@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="pp"></p>
+    <button id="like">👍</button>
+    <button id="dislike">👎</button>
+    <script>
+        // 좋아요 실습.
+        // 사용자가 좋아요 버튼을 누르면, p태그에 기존 값에서 +1하고 다시 대입
+        // 사용자가 싫어요 버튼을 누르면, p태그에 기존 값에서 -1하고 다시 대입
+        // 좋아요 숫자가 0밑으로 내려가지 않게.
+
+        // 1. 필요한 요소들을 JS영역에 가져오기
+        // 2. 이벤트 정의(좋아요/싫어요)
+        // 2-1. 클릭 이벤트
+        // 2-2. 이벤트가 발생한 당시의 p태그 값을 가져오기
+        // 2-3 +1 연산
+        // 2-4 p태그에 +1된 값을 다시 대입하기.
+
+        let ppp = document.getElementById("pp"); // p태그 가져오기
+        let like = document.getElementById("like"); // 좋아요 버튼 가져오기
+        let dislike = document.getElementById("dislike"); // 싫어요 버튼 가져오기
+        ppp.innerHTML = 0; // p태그에 초기값 0.
+        like.addEventListener("click", function(){
+            let num = parseInt(ppp.innerHTML);
+            num +=1; 
+            ppp.innerHTML = num; // p태그에 +1된 값 대입하기.
+        })
+        dislike.addEventListener("click",function(){
+            let num = parseInt(ppp.innerHTML);
+            if(num > 0){ // 0보다 클 경우.
+                num -= 1;
+                ppp.innerHTML = num; // p태그에 -1된 값 대입하기.
+            }else{ // // 0보다 작을 경우.
+                // 0보다 작아질 수 없으므로, -1을 하지 않고, 0으로 고정.
+                alert("0보다 작아질 수 없습니다.")
+            }
+        })
+    </script>
+</body>
+</html>
