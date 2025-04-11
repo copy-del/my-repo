@@ -9,9 +9,20 @@
     <button id="btn">요청</button>
     <div id="area"></div>
 
+    <table border="1px solid black">
+        <tr>
+            <td>순위</td>
+            <td>영화명</td>
+            <td>개봉일</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>하얼빈</td>
+            <td></td>
+        </tr>
+    </table>
 
-
-    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
         // 영화진흥위원회 open api를 이용해서
         // 박스오피스 데이터를 웹페이지에서 출력해보자.
@@ -27,8 +38,7 @@
 
         let btn = document.getElementById("btn");
         let area = document.getElementById("area")
-        let movieurl= "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=06ba645b86594a7c80cc349e4a910bdd&targetDt=20250101"
-
+        let movieurl= 'http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=06ba645b86594a7c80cc349e4a910bdd&targetDt=20250101'
         let getMovie = function(){
             $.ajax({
                 url : movieurl,
@@ -46,30 +56,8 @@
         }
 
         const render = function(ml){
-            let resultHTML = `
-                            <table border="1px solid black">
-                            <tr>
-                                <td>순위</td>
-                                <td>영화명</td>
-                                <td>개봉일</td>
-                            </tr>`
-                            for (let i=0; i<ml.length; i++){
-                            resultHTML += `
-                                <tr>
-                                <td>${ml[i].rank}</td>
-                                <td>${ml[i].movieNm}</td>
-                                <td>${ml[i].openDt}</td>
-                                </tr>
-                                `
-                            }
-                            
-                            resultHTML += `</table>`
 
-                            console.log(resultHTML);
-                            area.innerHTML =resultHTML;
-                            }
-                            
-                            
+        }
 
         btn.addEventListener('click',getMovie)
 
