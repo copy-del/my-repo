@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 50px;
+            color: blue;
+        }
+        #time{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 50px;
+            color: #333;
+            text-align: center;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <h1 id="time"></h1>
+    <script>
+       let time = document.getElementById("time");
+       
+        let getTime = function(){
+            time = new Date();
+            let hour = time.getHours(); // 시
+            let minute = time.getMinutes(); // 분
+            let second = time.getSeconds(); // 초
+            let ampm = hour >= 12 ? 'PM' : 'AM'; // 오전/오후 구분
+            hour = hour % 12; // 12시간제로 변환
+            hour = hour ? hour : 12; // 0시를 12시로 변환
+            minute = minute < 10 ? '0' + minute : minute; // 분이 10보다 작으면 앞에 0 추가
+            second = second < 10 ? '0' + second : second; // 초가 10보다 작으면 앞에 0 추가
+            let timeString = hour + ':' + minute + ':' + second + ' ' + ampm; // 시계 문자열 생성
+            document.getElementById("time").innerHTML = timeString; // 시계 문자열을 HTML에 출력
+            time.textContent = timeString; // 시계 문자열을 HTML에 출력
+        }
+        //* setInterval() : 일정 시간 간격으로 함수를 반복 실행하는 메서드
+        // setInterval(함수, 시간(밀리초))
+        setInterval(getTime, 1000); // 1초마다 getTime() 함수를 실행하여 시계를 업데이트
+        getTime();
+
+    </script>
+</body>
+</html>

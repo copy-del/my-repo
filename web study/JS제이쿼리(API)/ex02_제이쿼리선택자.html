@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parents">
+    <p id="one"></p>
+    <p id="two"></p>
+    <p id="three"></p>
+    <p id="four"></p>
+    <p id="five"></p>
+    <p id="six"></p>
+    </div>
+    <script src="./jquery-3.7.1.slim.min.js"></script>
+    <script>
+        $("*").css({
+            'color' : 'blue'
+        })
+        $("#two").css({
+            'color':'red'
+        })
+        $("#three+p").css({
+            'color':'pink'
+        })
+
+        // 1. 자식 요소를 가져오는 방법
+        console.log($('#parents').children());
+        // 2. 부모 요소를 가져오는 방법
+        console.log($('#one').parents());
+        // 3. 이전 요소 조회
+        console.log($('#three').prevAll());
+        // 4. 다음 요소 조회
+        console.log($('#three').nextAll());
+        
+        
+        
+        
+    </script>
+</body>
+</html>
