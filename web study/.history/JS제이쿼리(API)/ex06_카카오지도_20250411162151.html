@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>카카오 지도 예제</title>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bd527e80f7b29ac17cd11579de4bfe21&autoload=true"></script>
+</head>
+<body>
+  <div id="map" style="width:100%;height:350px;"></div>
+  <script>
+    // 이 코드는 kakao 스크립트 로드 이후 실행되어야 합니다
+    var mapContainer = document.getElementById('map');
+    var mapOption = {
+      center: new kakao.maps.LatLng(33.450701, 126.570667),
+      level: 3
+    };
+    var map = new kakao.maps.Map(mapContainer, mapOption);
+  </script>
+</body>
+</html>
