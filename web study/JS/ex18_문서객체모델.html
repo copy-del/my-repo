@@ -21,7 +21,7 @@
         console.log(title); // <h1 id="title">문서객체모델(DOM)</h1> - 객체로 리턴됨.
 
         // p 라는 태그명을 가진 요소들을 전부 조회해서,
-        // HtMLCollection 객체로 리턴.
+        // HtMLCollection 유사 배열 형태의 객체로 리턴.
         let pp = document.getElementsByTagName("p");
         console.log(pp);
         // pp : 배열. 배열중 하나의 요소를 선택할 때는 [0]을 붙여서 선택. 인덱  스 번호 적어서 접근.
@@ -32,7 +32,7 @@
         console.log(sp[1]);
         console.log(sp[2]);
 
-        let sp1 = document
+        let sp1 = document.getElementsByClassName("sp")[2]; // 0번째 요소를 선택
 
         // DOM
 

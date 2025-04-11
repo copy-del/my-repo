@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>안녕하세요 <span>금요일 입니다.</span></h1>     
+
+    <!-- 제이쿼리 로드방법
+        1. CDN(Content Delivery Network)를 활용해서 로드
+           절대 외부 JS파일 로드하는 script태그 안에 코드 작성 X -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+
+    <!-- 2. 직접 다운로드 받아서 로드하는 방법 -->
+     <script> src="./jquery-3.7.1.min.js"</script>
+
+     <script>
+        // 1. h1 선택자에 해당하는 요소에 content를 조회하는 기능.
+        console.log($("h1").html());    // innerHTML() 과 유사
+        console.log($("h1").text());    // textContent() 와 유사
+        // 2. content 내용 변경.
+        console.log();
+         $("h1").html("<span>변경</span>내용")
+         $("h1").text("<span>변경</span>내용")
+
+        // h1 선택자에 해당하는 요소의
+        // 1. style 변경. > .css('스타일속성','값')
+        $("h1").css('color','blue')
+        // 2. 다중 style 제어
+        // 2-1. 메소드 체인. > 메소드 끝나고 메소드 이어주기.
+        $('h1').css('font-family','궁서체').css('font-size','15px').css('background-color','red')
+
+        // 2-2. Js객체 형태로 스타일 적용시키기.
+        $('h1').css({
+            "color" : 'black', 'background-color' : 'pink'
+        })
+
+        // 2-3. Js객체 형태로 스타일 적용시키기.
+        // 스타일속성명을 카멜식으로 적었을 경우, 스타일속성명의 따옴표를 생략할 수 있다.
+        $('h1').css({
+            backgroundColor : 'skyblue',
+        })
+        
+        
+     </script>
+</body>
+</html>
