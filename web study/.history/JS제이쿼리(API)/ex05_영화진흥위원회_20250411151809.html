@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">요청</button>
+    <div id="area"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        // 영화진흥위원회 open api를 이용해서
+        // 박스오피스 데이터를 웹페이지에서 출력해보자.
+
+        // API (Application Programming Interface)
+        // - 사용자와 프로그램이 소통하는 규칙.
+
+        // open api : 누구나 데이터를 사용할 수 있도록 공개된 API
+        // - 장점 : 시간이나 비용이 많이 드는 기능을 직접 구현하지 않아도 됨.
+        // - 단점 : 대부분의 API들은 사용자에게 인증키를 발급하게 하고, 일정량을 초과하면 요금 부여.
+        
+        // - 공공데이터포털, 네이버/카카오/구글 개발자센터, API스토어
+
+        let btn = document.getElementById("btn");
+        let area = document.getElementById("area")
+        let movieurl= 'http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=06ba645b86594a7c80cc349e4a910bdd&targetDt=20250101'
+        let getMovie = function(){
+            $.ajax({
+                url : movieurl,
+                success : function(result){
+                    // console.log(result);   
+
+                    let movieList = result.boxOfficeResult.dailyBoxOfficeList
+                },
+                error : function(){
+                    console.log("요청실패ㅜ");
+                }
+            })
+        }
+        btn.addEventListener('click',getMovie)
+
+        
+    </script>
+</body>
+</html>

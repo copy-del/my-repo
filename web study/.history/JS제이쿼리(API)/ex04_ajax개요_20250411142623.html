@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./jquery-3.7.1.slim.min.js"></script>
+    
+    <script>
+        // ajax
+        // - 서버의 처리를 기다리지 않고 비동기적인 요청 가능
+        // - 페이지 새로고침이 일어나지 않음.
+        // - 필요한 부분만 새로운 데이터를 요청함.
+        // - 자원 절약, 시간적인 비용 절감
+        // - 너무 과도한 요청 시 서버에 부하가 생길 수 있음.
+        $.ajax({
+            url : "요청할 서버 경로",
+            type : "GET or POST",
+            data : "서버에 보낼 데이터",
+            
+        })
+    </script>
+</body>
+</html>
