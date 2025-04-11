@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let java_score = prompt("자바 점수를 입력하세요");   // 사용자에게 자바 점수를 입력받는다.
+        let web_score = prompt("웹 점수를 입력하세요");   // 사용자에게 웹 점수를 입력받는다.
+        let android_score = prompt("안드로이드 점수를 입력하세요");   // 사용자에게 안드로이드 점수를 입력받는다.
+        avg = (Number(java_score) + Number(web_score) + Number(android_score)) / 3;   // 평균을 계산한다.
+        if (avg >= 90) {   // 평균이 90 이상이면
+            alert("A학점입니다.");   // A학점을 출력한다.
+            console.log("A학점입니다.");   // A학점을 console에 출력한다.
+        } else if (avg >= 80) {   // 평균이 80 이상이면
+            alert("B학점입니다.");   // B학점을 출력한다.
+            console.log("B학점입니다.");   // B학점을 console에 출력한다.
+        } else if (avg >= 70) {   // 평균이 70 이상이면
+            alert("C학점입니다.");   // C학점을 출력한다.
+            console.log("C학점입니다.");   // C학점을 console에 출력한다.
+        } else if (avg >= 60) {   // 평균이 60 이상이면
+            alert("D학점입니다.");   // D학점을 출력한다.
+            console.log("D학점입니다.");   // D학점을 console에 출력한다.
+        } else {   // 평균이 60 미만이면
+            alert("F학점입니다.");   // F학점을 출력한다.
+            console.log("F학점입니다.");   // F학점을 console에 출력한다.
+        }
+    </script>
+</body>
+</html>
