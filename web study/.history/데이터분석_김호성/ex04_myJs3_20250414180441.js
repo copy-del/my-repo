@@ -1,0 +1,40 @@
+let ppp = document.getElementById("pp"); 
+let like = document.getElementById("like");
+let dislike = document.getElementById("dislike");
+let chogihwa = document.getElementById("chogihwa");
+
+ppp.innerHTML = 0;
+
+like_click = function(){
+    let num = parseInt(ppp.innerHTML)
+    num+=1;
+    ppp.innerHTML = num;
+}
+
+
+
+
+
+
+
+// let ppp = document.getElementById("pp"); 
+// let like = document.getElementById("like");
+// let dislike = document.getElementById("dislike");
+// ppp.innerHTML = 0; 
+// like.addEventListener("click", function(){
+//     let num = parseInt(ppp.innerHTML);
+//     num +=1; 
+//     ppp.innerHTML = num; 
+// })
+// dislike.addEventListener("click",function(){
+//     let num = parseInt(ppp.innerHTML);
+//     if(num > 0){ 
+//         num -= 1;
+//         ppp.innerHTML = num; 
+//     }   
+// })
+
+// chogihwa.addEventListener("click",function(){
+//     location.reload();
+// })
+        

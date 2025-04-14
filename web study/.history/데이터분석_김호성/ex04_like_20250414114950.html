@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="pp"></p>
+    <button id="like">👍</button>
+    <button id="dislike">👎</button>
+
+    <script>
+       let ppp = document.getElementById("pp"); // p태그 가져오기
+        let like = document.getElementById("like"); // 좋아요 버튼 가져오기
+        let dislike = document.getElementById("dislike"); // 싫어요 버튼 가져오기
+        ppp.innerHTML = 0; // p태그에 초기값 0.
+        like.addEventListener("click", function(){
+            let num = parseInt(ppp.innerHTML);
+            num +=1; 
+            ppp.innerHTML = num; 
+        })
+        dislike.addEventListener("click",function(){
+            let num = parseInt(ppp.innerHTML);
+            if(num > 0){ 
+                num -= 1;
+                ppp.innerHTML = num; 
+            }else{ 
+                
+                alert("0보다 작아질 수 없습니다.")
+            }
+        })
+    </script>
+</body>
+</html>

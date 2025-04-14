@@ -1,0 +1,12 @@
+let number = document.getElementById('number');
+let for_button = document.getElementById("for_button");
+let while_button = document.getElementById("while_button");
+let space = document.getElementById("space");
+
+
+let for_dan
+for (let i = 0; i<9;i++){
+    
+}
+
+

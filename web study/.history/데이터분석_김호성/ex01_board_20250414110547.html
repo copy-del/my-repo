@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #table{
+            width: 400px;
+        }
+        th{
+            text-align: left;
+            column-span: all;
+        }
+        .Step{
+            background-color:gray; 
+            height: 50;
+        }
+        tr{
+            height: 35;
+            background-color: whitesmoke;
+        }
+        .td1{
+            text-align:right;
+        }
+        .button{
+            text-align:center;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <form action="#">
+        <table id="table">
+            <tr class="Step">
+                <th colspan="2">Step.1 아이디/비밀번호 입력</th>
+            </tr>
+            <tr >
+                <td class="td1">아이디</td>
+                <td>
+                    <input type="text" name="ID">
+                </td>
+            </tr>
+            <tr >
+                <td class="td1">비밀번호</td>
+                <td>
+                    <input type="password" name="PW">
+                </td>
+
+            </tr>
+            <tr >
+                <td class="td1">비밀번호 확인</td>
+                <td>
+                    <input type="text" name="PW">
+                </td>
+            </tr>
+            <tr >
+                <th class="Step" colspan="2">Step2. 개인정보</th>
+            </tr>
+            <tr >
+                <td class="td1">성별</td>
+                <td>
+                    <input type="radio" name="gender" value="man" id="">
+                    <span>남</span>
+                    <input type="radio" name="gender" value="woman" id="">
+                    <span>여</span>
+                </td>
+            </tr>
+            <tr >
+                <td class="td1">혈액형</td>
+                <td>
+                    <select name="" id="">
+                        <option value="">혈액형 선택</option>
+                        <option value="A">A형</option>
+                        <option value="B">B형</option>
+                        <option value="O">O형</option>
+                        <option value="AB">AB형</option>
+                    </select>
+                </td>
+            </tr>
+            <tr >
+                <td class="td1">생일</td>
+                <td>
+                    <input type="date" name="" id="">
+                </td>
+            </tr>
+            <tr >
+                <th class="Step" colspan="2">Step3. 선호도</th>
+            </tr>
+            <tr >
+                <td>취미</td>
+                <td>
+                    <span>축구</span><input type="checkbox" name="hobby" value="soccor" id="">
+                    <span>야구</span><input type="checkbox" name="hobby" value="baseball" id="">
+                    <span>농구</span><input type="checkbox" name="hobby" value="basketball" id="">
+                </td>
+            </tr>
+            <tr >
+                <th class="Step" colspan="2">Step4. 하고 싶은 말</th>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea name="message" id="message" cols="60" rows="5">
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="button" colspan="2">
+                    <button id="jaechul">제출</button>
+                    <button id="chogihwa">초기화</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        let chogihwa = addEventListener("click")
+    </script>
+</body>
+</html>
