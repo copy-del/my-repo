@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="pp"></p>
+    <button id="like">+1증가</button>
+    <button id="dislike">-1감소</button>
+    <button></button>
+
+    <script>
+       let ppp = document.getElementById("pp"); 
+        let like = document.getElementById("like"); 
+        let dislike = document.getElementById("dislike"); 
+        ppp.innerHTML = 0; 
+        like.addEventListener("click", function(){
+            let num = parseInt(ppp.innerHTML);
+            num +=1; 
+            ppp.innerHTML = num; 
+        })
+        dislike.addEventListener("click",function(){
+            let num = parseInt(ppp.innerHTML);
+            if(num > 0){ 
+                num -= 1;
+                ppp.innerHTML = num; 
+            }
+        })
+    </script>
+</body>
+</html>

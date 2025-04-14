@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <th>구구단을 외자!</th>
+            </tr>
+            <tr>
+                <td>숫자를 입력 하세요</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="number"> <button id="for">for</button><button id="while">while</button></td>
+            </tr>
+            <tr id="y">
+
+            </tr>
+            
+        </table>
+    </div>
+    
+    <script src="./ex02_myJs1.js">
+        let for_button = document.getElementById('for');
+        let while_button = document.getElementById('while');
+        let number = document.getElementById('number');
+        let y = document.getElementById('y');
+        for_button.addEventListener('click',function(){
+            for_gugudan(number);
+            
+        })
+        while_button.addEventListener('click',function(){
+            while_gugudan(number);
+        })
+
+        
+        
+
+        
+    </script>
+</body>
+</html>
