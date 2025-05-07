@@ -60,7 +60,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector connectionTimeout="20000" maxParameterCount="1000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" maxParameterCount="1000" port="8088" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -160,7 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="ex03GetPost" path="/ex03GetPost" reloadable="true" source="org.eclipse.jst.jee.server:ex03GetPost"/><Context docBase="Ex01FirstServlet" path="/Ex01FirstServlet" reloadable="true" source="org.eclipse.jst.jee.server:Ex01FirstServlet"/><Context docBase="ex02DataSend" path="/ex02DataSend" reloadable="true" source="org.eclipse.jst.jee.server:ex02DataSend"/><Context docBase="ex05JSPPlus" path="/ex05JSPPlus" reloadable="true" source="org.eclipse.jst.jee.server:ex05JSPPlus"/><Context docBase="ex04JSP" path="/ex04JSP" reloadable="true" source="org.eclipse.jst.jee.server:ex04JSP"/><Context docBase="ex06CookieSession" path="/ex06CookieSession" reloadable="true" source="org.eclipse.jst.jee.server:ex06CookieSession"/></Host>
+      <Context docBase="MavenProject020" path="/MavenProject020" reloadable="true" source="org.eclipse.jst.j2ee.server:MavenProject020"/><Context docBase="ex03GetPost" path="/ex03GetPost" reloadable="true" source="org.eclipse.jst.jee.server:ex03GetPost"/><Context docBase="ex06CookieSession" path="/ex06CookieSession" reloadable="true" source="org.eclipse.jst.jee.server:ex06CookieSession"/><Context docBase="Ex01FirstServlet" path="/Ex01FirstServlet" reloadable="true" source="org.eclipse.jst.jee.server:Ex01FirstServlet"/><Context docBase="ex02DataSend" path="/ex02DataSend" reloadable="true" source="org.eclipse.jst.jee.server:ex02DataSend"/><Context docBase="ex05JSPPlus" path="/ex05JSPPlus" reloadable="true" source="org.eclipse.jst.jee.server:ex05JSPPlus"/><Context docBase="ex04JSP" path="/ex04JSP" reloadable="true" source="org.eclipse.jst.jee.server:ex04JSP"/><Context docBase="mavensample (1)" path="/mavensample" reloadable="true" source="org.eclipse.jst.jee.server:mavensample (1)"/><Context docBase="mavengood" path="/mavengood" reloadable="true" source="org.eclipse.jst.j2ee.server:mavengood"/><Context docBase="mavenmember_teacher" path="/mavenmember" reloadable="true" source="org.eclipse.jst.jee.server:mavenmember_teacher"/></Host>
     </Engine>
   </Service>
 </Server>
