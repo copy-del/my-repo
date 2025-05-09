@@ -1,0 +1,10 @@
+1746058946647	Move 2 resources to 'webapp'
+1746063115557	Delete element
+1746063120133	Rename resource 'Mybatis-config2.xml'
+1746085587186	Delete element
+1746085618774	Delete element
+1746145974382	Delete element
+1746149334682	Move 'Mybatis-config.xml' to 'resources'
+1746149356629	Move 'db.properties' to 'resources'
+1746149366185	Move 'Membermapper.xml' to 'resources'
+1746153006699	Move files

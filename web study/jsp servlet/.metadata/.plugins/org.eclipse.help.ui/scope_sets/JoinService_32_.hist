@@ -1,0 +1,6 @@
+#Fri May 02 11:45:38 KST 2025
+__DEFAULT__=false
+expression=JoinService 
+org.eclipse.help.ui.localSearch.master=true
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.sdk.Google.master=true
