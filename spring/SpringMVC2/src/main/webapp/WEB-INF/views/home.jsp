@@ -21,7 +21,7 @@
        * viewname : 이동하고 싶은 페이지의 파일명(확장자x)
       main.jsp -> main, Login.jsp -> Login
     8) viewname을 풀네임으로 작업해주는 "viewResolver"
-      접두사 + viewname + 접미사ㄴㄴ
+      접두사 + viewname + 접미사는 붙히지 않는다.
       * 접두사 : 해당 파일이 저장된 디렉토리 주소
          ex) src/main/..
       * 접미사 : 파일의 확장자 (.jsp)

@@ -25,7 +25,7 @@ public class BoardController {
 //		Boardmapper b1 = new BoardMapper();  '인터페이스'는 객체 생성 불가.
 		List<BoardVO> list = mapper.BoardList();
 		model.addAttribute("list",list);
-		return "board";
+		return "Board";
 		
 	}
 
