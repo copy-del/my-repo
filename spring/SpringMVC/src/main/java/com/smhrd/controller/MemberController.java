@@ -1,6 +1,8 @@
 package com.smhrd.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mysql.cj.Session;
 import com.smhrd.mapper.MemberMapper;
@@ -23,7 +27,7 @@ public class MemberController {
 	@Autowired
 	MemberMapper mapper;
 	
-	@PostMapping("/join")
+	@PostMapping("/join") // 자료형 통일
 	public String join(MemberVO vo, Model model) {
 		mapper.join(vo);
 		// 페이지 이동 방법
@@ -84,12 +88,44 @@ public class MemberController {
 	
 	//회원탈퇴 메서드
 	@RequestMapping("/delete")
-	public String delete() {
+	public String delete(@RequestParam String EMAIL, HttpSession session) {
+		// 기본문법 @RequestParam ("EMAIL") String EMAIL
+		// delete쿼리문 실행 후 영향 받는 행의 개수. > int 값으로 반환됨.
+		int count = mapper.delete(EMAIL);
+		
+		if(count>0) {
+			// delete 성공
+			session.invalidate();
+			System.out.println("성공");
+		}else {
+			//delete 실패
+			System.out.println("실패");
+		}
 		return "main";
 	}
 	
-	
-	
+	@RequestMapping("/select")
+	public String select( Model model) {
+		List<MemberVO> members = mapper.select();
+		model.addAttribute("mvo",members);
+		return "select";
+	}
+	// ResponseBody : 메서드의 리턴값을 viewname이 아니라 화면에 출력하고 싶을 때 사용.
+	@ResponseBody
+	@RequestMapping("/EMAILCheck")
+	public Map<String, Boolean> EMAILCheck(@RequestParam String EMAIL) {
+		int result = mapper.EMAILCheck(EMAIL);
+		boolean available = false;
+		if(result==0) {
+			//같은 이메일 존재 X
+			System.out.println("중복 없음");
+			available = true;
+		}
+		// hash map (자료구조)
+		Map<String, Boolean> response = new HashMap<>();
+		response.put("available", available);
+		return response;
+	}
 	
 	
 	

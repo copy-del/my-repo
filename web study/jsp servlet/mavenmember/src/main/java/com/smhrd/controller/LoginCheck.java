@@ -30,9 +30,7 @@ public class LoginCheck extends HttpServlet {
 		// JSON형태로 응답
 		response.setContentType("application/json; charset=UTF-8");
 		response.getWriter().write("{ \"available\" : "+ available + "}");
-		
 		System.out.println("가능여부 : " + available);
-	
 	
 	}
 

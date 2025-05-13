@@ -14,8 +14,9 @@
 		UPDATE MEMBER set PW = #{PW}, TEL = #{TEL}, ADDRESS = #{ADDRESS} where EMAIL=#{EMAIL}
 	</update>
 	
-	<delete id="delete" parameterType="com.smhrd.model.MemberVO">
-	delete
-	</delete>
+	<select id="EMAILCheck" resultType="int">
+		Select count(*) From MEMBER Where EMAIL=#{EMAIL}
+	</select>
+	
 
 </mapper>

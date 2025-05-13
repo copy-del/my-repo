@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- cpath : Context Path를 가져오는 방법 
+	pageContext : servlet클래스를 상속해서 jsp 실행 시, 자동으로 제공하는 내장 객체
+	contextpath : 특정 웹 어플리케이스 식별 하는 용도-->
+<c:set var="cpath" value="${pageContext.request.contextpath}">
 <html>
 	<head>
 		<title>Forty by HTML5 UP</title>
@@ -21,12 +25,17 @@
 						<c:if test="${mvo == null}">
 								<a href="#menu">로그인</a>
 								</c:if>
-							<!-- 로그인 후 Logout.jsp로 이동할 수 있는'로그아웃'링크와 '개인정보수정'링크를 출력하시오. -->
+							<!-- 로그인 후 Logout.jsp로 이동할 수 있는'로그아웃'링크와 '개인정보수정'링크를 출력하시오.
+							세션안에 저장된 mvo값이 있을 경우.. -->
 						<c:if test="${mvo != null}">
+						<%cpath%>
 							<a href="logout">로그아웃</a>
 							<a href="update">회원정보 수정</a>
-							<a href="">회원탈퇴</a>
+							<a href="delete?EMAIL=${mvo.EMAIL}">회원탈퇴</a>
+							<c:if test="${mvo.getEMAIL().contains('admin')}">
+								<a href="select">전체 회원 목록</a>
 							</c:if>
+						</c:if>
 						</nav>
 					</header>
 
@@ -43,7 +52,8 @@
 						<ul class="actions vertical">
 							<li><h5>회원가입</h5></li>
 								<form action="join" method="post" >
-									<li><input type="text" name="EMAIL" placeholder="Email을 입력하세요"></li>
+									<li><input id="inputEMAIL" type="text" name="EMAIL" placeholder="Email을 입력하세요"></li>
+									<li><span id="EMAILCheckMsg"></span></li>
 									<li><input type="password" name="PW" placeholder="PW를 입력하세요"></li>
 									<li><input type="text" name="TEL" placeholder="전화번호를 입력하세요"></li>
 									<li><input type="text" name="ADDRESS" placeholder="집주소를 입력하세요"></li>
@@ -233,7 +243,36 @@
 			<script src="resources/assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="resources/assets/js/main.js"></script>
+			<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+	<script>
+	// 사용자가 입력 후, 다른 곳을 클릭하면 코드 실행 'blur'
+		$('#inputEMAIL').on('blur', function(){
+			let EMAIL = $(this).val().trim();
+			
+			$.ajax({
+				url: '${cpath}/EMAILCheck',
+				type : 'GET',
+				data : { //전송할 데이터
+					EMAIL : EMAIL 	// key/value값 JSON 형태
+					},
+				dataType: 'json',
+				success : function(data){
+					console.log(data)
+					if (data.available){	// 사용가능 (true)
+						$("#EMAILCheckMsg").text("사용가능한 EMAIL입니다.");
+					}else{			// 중복일 때
+						$("#EMAILCheckMsg").text("중복된 EMAIL입니다.");
+						
+					}
+				}
+			
+		})
+		})
+	</script>
+	
 	</body>
 </html>
+
+
 

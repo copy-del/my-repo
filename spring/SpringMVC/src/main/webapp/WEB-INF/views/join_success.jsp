@@ -28,7 +28,7 @@
 							<li>회원가입을 축하합니다.</li>
 							<!-- request영역에 저장된 회원정보 중 이메일을 출력하시오. -->
 							<li>메세지시스템의 새로운 이메일은 <%= request.getParameter("EMAIL") %>입니다.</li>
-							<li><button onclick='location.href="main.jsp"'>시작하기</button></li>
+							<li><button onclick='location.href="./"'>시작하기</button></li>
 						</ul>
 					</nav>			
 			</div>

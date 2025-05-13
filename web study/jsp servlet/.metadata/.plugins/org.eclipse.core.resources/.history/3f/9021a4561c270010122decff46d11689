@@ -1,9 +1,0 @@
-package com.smhrd.model;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-
-public class MemberDAO {
-
-	SqlSessionFactory sessionFactory = SqlSessionManager.getSqlSessionFactory();
-	
-}
