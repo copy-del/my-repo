@@ -18,5 +18,8 @@
 		Select count(*) From MEMBER Where EMAIL=#{EMAIL}
 	</select>
 	
+	<select id="searchMember" resultType="com.smhrd.model.MemberVO">
+		Select * From MEMBER where EMAIL like CONCAT('%',#{search},'%')
+	</select>
 
 </mapper>

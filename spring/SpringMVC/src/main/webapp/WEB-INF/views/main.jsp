@@ -4,7 +4,7 @@
 <!-- cpath : Context Path를 가져오는 방법 
 	pageContext : servlet클래스를 상속해서 jsp 실행 시, 자동으로 제공하는 내장 객체
 	contextpath : 특정 웹 어플리케이스 식별 하는 용도-->
-<c:set var="cpath" value="${pageContext.request.contextpath}">
+<c:set var="cpath" value="${pageContext.request.contextPath}"></c:set>
 <html>
 	<head>
 		<title>Forty by HTML5 UP</title>
@@ -28,7 +28,6 @@
 							<!-- 로그인 후 Logout.jsp로 이동할 수 있는'로그아웃'링크와 '개인정보수정'링크를 출력하시오.
 							세션안에 저장된 mvo값이 있을 경우.. -->
 						<c:if test="${mvo != null}">
-						<%cpath%>
 							<a href="logout">로그아웃</a>
 							<a href="update">회원정보 수정</a>
 							<a href="delete?EMAIL=${mvo.EMAIL}">회원탈퇴</a>

@@ -26,6 +26,7 @@ public interface MemberMapper {
 	
 	// EMAIL 체크하는 Sql 쿼리문
 	public int EMAILCheck(String EMAIL);
+	public List<MemberVO> searchMember(String search);
 	
 	
 	

@@ -1,8 +1,6 @@
 package com.smhrd.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -13,9 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.mysql.cj.Session;
 import com.smhrd.mapper.MemberMapper;
 import com.smhrd.model.MemberVO;
 
@@ -26,6 +22,8 @@ public class MemberController {
 	// @AutoWired 사용
 	@Autowired
 	MemberMapper mapper;
+	
+	
 	
 	@PostMapping("/join") // 자료형 통일
 	public String join(MemberVO vo, Model model) {
@@ -110,22 +108,7 @@ public class MemberController {
 		model.addAttribute("mvo",members);
 		return "select";
 	}
-	// ResponseBody : 메서드의 리턴값을 viewname이 아니라 화면에 출력하고 싶을 때 사용.
-	@ResponseBody
-	@RequestMapping("/EMAILCheck")
-	public Map<String, Boolean> EMAILCheck(@RequestParam String EMAIL) {
-		int result = mapper.EMAILCheck(EMAIL);
-		boolean available = false;
-		if(result==0) {
-			//같은 이메일 존재 X
-			System.out.println("중복 없음");
-			available = true;
-		}
-		// hash map (자료구조)
-		Map<String, Boolean> response = new HashMap<>();
-		response.put("available", available);
-		return response;
-	}
+	
 	
 	
 	
