@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  
+ <mapper namespace="com.smhrd.database.MemberMapper" >
+ 	<insert id="join" parameterType="com.smhrd.model.MemberVO">
+ 		insert into NewMember values(#{id}, #{pw}, #{tel},#{address} )
+ 	</insert>
+ 	
+ 	<select id="login" parameterType="com.smhrd.model.MemberVO">
+ 		select * from NewMember where id=#{id} and pw=#{pw}
+ 	</select>
+ 	
+ 	<update id="update" parameterType="com.smhrd.model.MemberVO">
+ 		update NewMember set name=#{name} where id=#{id} 
+ 	</update>
+ 	
+ 	
+  	<select id="idCheck" parameterType="com.smhrd.model.MemberVO" resultType="int">
+ 		select count(*) from NewMember where id=#{id}
+ 	</select>
+ 
+ 
+ </mapper>

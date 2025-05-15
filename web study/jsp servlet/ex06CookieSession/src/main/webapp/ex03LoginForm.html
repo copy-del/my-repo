@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 
+1. LoginForm에서 로그인 입력
+2. LoginCheck에서 로그인 검증
+	성공 > 세션값을 저장하고, 메인페이지로 이동
+	실패 > 다시 로그인 할 수 있게 loginForm 이동
+3. Main에서 세션값의 id 읽어서 환영메시지 표출
+4. Main-MyPage로 넘어가도 id값을 유지/표출
+5. Main에서 로그아웃 누르면 > Logout 서블릿에서 세션 삭제 > 다시 LoginForm으로 이동
+
+ -->
+
+
+	<form action="ex03LoginCheck" method="post">
+		ID<input type="text" name="id"> PW<input type="text" name="pw">
+		<input type="submit" value="로그인">
+	</form>
+
+</body>
+</html>
