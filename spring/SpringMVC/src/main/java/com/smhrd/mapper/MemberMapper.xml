@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.MemberMapper">
+
+	<insert id="join" parameterType="com.smhrd.model.MemberVO">
+		INSERT INTO MEMBER VALUES(#{EMAIL},#{PW},#{TEL},#{ADDRESS})
+	</insert>
+	
+	<select id="login" parameterType="com.smhrd.model.MemberVO" resultType="com.smhrd.model.MemberVO">
+		SELECT * FROM MEMBER WHERE EMAIL = #{EMAIL} AND PW = #{PW}
+	</select>
+	
+	<update id="update" parameterType="com.smhrd.model.MemberVO">
+		UPDATE MEMBER set PW = #{PW}, TEL = #{TEL}, ADDRESS = #{ADDRESS} where EMAIL=#{EMAIL}
+	</update>
+	
+	<select id="EMAILCheck" resultType="int">
+		Select count(*) From MEMBER Where EMAIL=#{EMAIL}
+	</select>
+	
+	<select id="searchMember" resultType="com.smhrd.model.MemberVO">
+		Select * From MEMBER where EMAIL like CONCAT('%',#{search},'%')
+	</select>
+
+</mapper>
