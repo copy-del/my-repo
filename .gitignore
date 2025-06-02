@@ -1,0 +1,14 @@
+# Java/Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+target/
+*.launch
+*.log
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
