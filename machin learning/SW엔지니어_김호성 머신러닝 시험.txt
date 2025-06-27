@@ -1,0 +1,77 @@
+문제 1-1
+지도학습 : 1, 3, 5
+비지도 학습 : 4, 6, 8
+
+문제 1-2
+ㅁ - ㄱ - ㄷ - ㄴ - ㄹ
+
+문제 2-1
+ㄱ = a | ㄴ = b | ㄷ = a | ㄹ = b
+
+문제 3-1
+지도학습
+
+문제 3-2
+비지도학습
+
+문제 4-1
+(1), (3)
+
+문제 4-2
+과대적합
+
+문제 4-3
+train : 7, test : 3
+
+문제 5-1
+2
+
+문제 6-1
+1, 5
+
+문제 6-2
+(1) : iris_data = load_iris()
+(2) : X = pd.DataFrame(iris_data['data'], columns = iris_data['feature_names'])
+y = iris_data['target']
+(3) : X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    test_size = 0.3, # 
+                                                    random_state = 1)
+(4) : knn_model = KNeighborsClassifier(n_neighbors=3)
+(5) : cross_val_score(knn_model, X_train, y_train, cv = 5)
+(6) : cross_val_score(knn_model, X_train, y_train, cv = 5)
+print('평균점수 : ' cross_val_score(knn_model, X_train, y_train, cv = 5).mean())
+
+문제 7-1
+4
+
+문제 8-1
+one-hot encoding
+
+문제 8-2
+1, 3
+
+문제 9-1
+2, 3, 7, 8
+
+문제 9-2
+3, 4, 5, 7
+
+문제 9-3
+(1) : max_depth (2) : max_leaf_nodes (3) : min_samples_split (4) : min_samples_leaf
+
+문제 10-1
+4, 6, 7
+
+문제 10-2
+1, 3
+
+문제 11-1
+1, 3, 5
+
+문제 12-1
+accuracy : 정확도 (모델 기준), 모델이 예측한 결과값과 실제 정답과의 일치 확률
+recall : 재현율(데이터 기준), 실제 *데이터 중에서, 모델이 *라고 예측한 비율
+precision : 정밀도(모델 기준), 모델이 *라고 예측한 것 중에서, 실제로도 데이터 *인 비율
+
+문제 12-2
+2, 3, 4, 5
