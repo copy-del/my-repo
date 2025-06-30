@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.web.mapper.BoardMapper">
+  <select id="selectBoard" resultType="Board">
+    select * from "Board"
+  </select>
+  
+  <insert id="postBoard" parameterType="Board">
+  insert into "Board"
+  ("bnum","title","writer","content")
+  values
+  (board_num.nextval,#{title},#{writer},#{content})
+  </insert>
+  
+  
+  
+  
+  
+  
+  
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
