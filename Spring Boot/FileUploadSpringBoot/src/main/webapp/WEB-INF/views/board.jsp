@@ -66,6 +66,7 @@
 					<td colspan="5">
 						<button onclick="location.href='temp'" class="btn btn-sm btn-success">테스트</button>
 						<button onclick="location.href='insert'" class="btn btn-primary btn-sm">글쓰기</button>
+						<button onclick="location.href='upload'" class="btn btn-warning btn-sm">업로드</button>
 					</td>
 				</tr>
 			</table>
