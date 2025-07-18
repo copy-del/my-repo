@@ -1,2 +1,34 @@
 /.metadata/
 
+# Eclipse
+.metadata/
+.settings/
+.classpath
+.project
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# OS 임시 파일
+.DS_Store
+Thumbs.db
+
+# 로그 파일
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+.venv/
+
+# Java Maven/Gradle
+target/
+build/
+.gradle/
+.mvn/
+*.class
+*.jar
+*.war
